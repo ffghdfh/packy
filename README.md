@@ -9,6 +9,7 @@ Add your own files to the packy manager here!
 `packy autoremove` remove any leftover files from any removed packages, but unneeded in most cases because remove *should* in theory get rid of everything
 
 there are also a few **options** you can use  
+make sure you put the options at the very end of the line, or packy might break!  
 `-y` if there's anything that requires entering y or n, it'll automatically choose y  
 `-r` you can install code with a raw.githubconsent.com link with this, example: `packy install -l raw.github.consent.com/epic/file.file`  
 `-f` you can force download a package that has been already downloaded, this might fix some issues if you messed with the code in any of the packages  
