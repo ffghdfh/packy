@@ -21,11 +21,11 @@ else:
 2. Open the `packs.nya` file  
 3. Type in the required information like this:  
 ```
-name "https://github.com/link/to/repo" anything,you,have,to,pip,install,separated,by,commas [mainfile.py]
+name "https://github.com/link/to/repo" (anything,you,have,to,pip,install,separated,by,commas) [mainfile.py]
 ```
 here's an example:  
 ```
-emmatext "https://github.com/ffghdfh/emma-text-editor" colorama,playsound [emma.py]
+emmatext "https://github.com/ffghdfh/emma-text-editor" (colorama,playsound) [emma.py]
 ```
 # some issues
 Currently the biggest issue so far is installing by url, because it won't install any required dependencies, and when running for the first time, the user has to specify which file to run (but it'll get saved so you don't have to enter it again)
