@@ -1,2 +1,2 @@
-calc https://github.com/ffghdfh/computey-calc
-emmatext https://github.com/ffghdfh/emma-text-editor
+calc "https://github.com/ffghdfh/computey-calc" (colorama) [calc.py]
+emmatext "https://github.com/ffghdfh/emma-text-editor" (colorama,playsound) [emma.py]
