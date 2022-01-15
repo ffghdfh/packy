@@ -1,40 +1,31 @@
 # packy
-Add your own files to the packy manager here!  
-**Here are the current commands:**  
-`packy list` lists all the files / packages that are available to download  
-`packy install <file name>` installs a specific file / package  
-`packy search` search for specific file / package  
-`packy installed` list all the installed files  
-`packy remove <file name>` remove a specific file / package  
-`packy autoremove` remove any leftover files from any removed packages, but unneeded in most cases because remove *should* in theory get rid of everything
-
-there are also a few **options** you can use  
-make sure you put the options at the very end of the line, or packy might break!  
-`-y` if there's anything that requires entering y or n, it'll automatically choose y  
-`-r` you can install code with a raw.githubconsent.com link with this, example: `packy install -l raw.github.consent.com/epic/file.file`  
-`-f` you can force download a package that has been already downloaded, this might fix some issues if you messed with the code in any of the packages  
-`-q` this disables most of the install log but will keep "Downloading package..." and "Finished downloading." and will show any error code if couldn't download  
-`-shut` this disables ***ALL*** of the output, idk why you would need this
-`-v` shows current packy version  
-
-IF you'd like to update packy or if it has issues, or just wanna do it for fun, you can reinstall packy with the following command:  
-`packy reinstall`
-
-# adding your own file / package
-**Here's how you can add your own file / package:**   
-First, add all your files to a github repository. Next, create a file in the root folder named (insert package name).nya (replace the "insert package name" with the package name lol)   
-Next, specify the path and name of the python file to run first when running the program, like this: (if the file is in the root folder then just write the name of the file)
-`path/to/file.py` or if it's in the root folder of the repo then just enter the file name: `file.py` (write all of this in the first line of the file)
-if you have any modules that have to be installed (stuff you need to use pip install for), type the specific names of the packages separated with commas into the second line, like this:
-`ursina,pygame,pyneapple`
-so it should look something like this :D
+Welcome! Here's a quick overview on how to use packy and it's functions!  
+**Functions:**  
+`packy.install(pack)` - Installs a package by a name  
+`packy.remove(pack)` - Removes an installed package by a name  
+`packy.installurl(pack)` - Installs a package by github url (there's some issues with it, more on that later)  
+`packy.update()` - Updates all of the variables with the latest values  
+`packy.isinstalled(pack)` - checks if a certain package is installed, returns either True or False, example:  
+```py
+if packy.isinstalled("coolpack"):
+  #do stuff if it's true
+else:
+  #do stuff if it isn't true
+ ```
+ `packy.search(pack)` - Searches for a package in the official list, returns the results as a list  
+**Variables:**  
+`packy.installed[]` - A list containing every single installed package  
+`packy.list[]` - A list containing every official package in the packages.nya file  
+# How to add your own
+1. Upload your pack onto a github repo  
+2. Open the `packs.nya` file  
+3. Type in the required information like this:  
 ```
-path/to/file.py
-pynedog,django
+name "https://github.com/link/to/repo" anything,you,have,to,pip,install,separated,by,commas [mainfile.py]
 ```
-and then open up packs.nya in this repo, make a new line and then type in the name of your package followed by the link to your repository. something like this:
+here's an example:  
 ```
-crap https://someoneelse'srepo.lol
-pee https://yourrepo.com
+emmatext "https://github.com/ffghdfh/emma-text-editor" colorama,playsound [emma.py]
 ```
-and that should be it! If you wanna check if it was actually added, just do `packy list`, every time you run the command, it checks the packs.nya file so no need to update or anything.
+# some issues
+Currently the biggest issue so far is installing by url, because it won't install any required dependencies, and when running for the first time, the user has to specify which file to run (but it'll get saved so you don't have to enter it again)
