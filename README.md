@@ -15,7 +15,7 @@ else:
  `packy.search(pack)` - Searches for a package in the official list, returns the results as a list  
 **Variables:**  
 `packy.installed[]` - A list containing every single installed package  
-`packy.list[]` - A list containing every official package in the packages.nya file  
+`packy.packs[]` - A list containing every official package in the packages.nya file  
 # How to add your own
 1. Upload your pack onto a github repo  
 2. Open the `packs.nya` file  
